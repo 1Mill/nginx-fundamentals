@@ -3,5 +3,6 @@ version: '3'
 services:
   nginx:
     build: .
-    volumes:
-      - ./:/app
+    ports:
+      - 443:443
+      - 80:80
