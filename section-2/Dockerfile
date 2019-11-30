@@ -27,4 +27,9 @@ RUN ./configure \
 RUN make && make install
 
 EXPOSE 80
+
+# * Copy files relative to the root
+WORKDIR /
+COPY . .
+
 CMD ["nginx", "-g", "daemon off;"]
