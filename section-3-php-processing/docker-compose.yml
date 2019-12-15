@@ -5,3 +5,7 @@ services:
     build: ./nginx
     ports:
       - 80:80
+  php:
+    build: ./php
+    ports:
+      - 3000:3000
