@@ -1,16 +1,20 @@
 FROM ubuntu:latest
 
+# * Varaibles for tzdata pacakge (depandance of php-fpm)
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ America/Los_Angeles
+
 # * Update package cache and install necessary pacakges
-RUN apt-get update 
-RUN apt-get install -y \
-        build-essential \
-        libpcre3 \
-        libpcre3-dev \
-        libssl-dev \
-        php-fpm \
-        wget \
-        zlib1g \
-        zlib1g-dev
+RUN apt-get update \
+        && apt-get install -y \
+                build-essential \
+                libpcre3 \
+                libpcre3-dev \
+                libssl-dev \
+                php-fpm \
+                wget \
+                zlib1g \
+                zlib1g-dev
 
 # * Install nginx
 ENV NGINX_VERSION 1.13.10
